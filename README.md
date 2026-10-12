@@ -5,11 +5,13 @@ Este proyecto es un servidor de chat implementado en Go utilizando el framework 
 Para los servicios que no pueden conectarse con el Websocket, se proporciona un servicio de conexion HTTP para el envio de mensajes.
 
 ### Características Principales
+
 - **WebSocket**: Comunicación bidireccional entre el servidor y los clientes utilizando WebSocket para una experiencia de chat en tiempo real.
 - **Salas de Chat**: Los usuarios pueden unirse a salas específicas y comunicarse dentro de ellas.
 - **Peticiones REST**: Funcionalidad adicional mediante un endpoint REST para enviar mensajes desde sistemas que no admiten WebSocket directamente.
 
 ## Instalacion
+
 ```bash
 go get -u ./...
 ```
@@ -19,12 +21,15 @@ go mod tidy
 ```
 
 ## RUN
+
 ```bash
 go run main.go
 ```
 
-## CONEXION WS: 
->ws://localhost:8888/ws?id=1&room=rom-1
+## CONEXION WS:
+
+> ws://localhost:8888/ws?id=1&room=rom-1
+
 ```
 {
 	"sender": 1,
@@ -32,8 +37,10 @@ go run main.go
 }
 ```
 
-## CONEXION HTTP: 
->http://localhost:8888/rest-sw?room=rom-1
+## CONEXION HTTP:
+
+> http://localhost:8888/rest-sw?room=rom-1
+
 ```
 {
 	"sender": 2,
@@ -42,6 +49,7 @@ go run main.go
 ```
 
 ## DOCKER
+
 ```bash
 docker build -t socket:lastest .
 ```
@@ -53,3 +61,5 @@ docker run -d -p 8888:8888  --name socket-app socket:lastest
 ```bash
 docker compose up --build -d
 ```
+
+## Pendiente Monitor
