@@ -6,5 +6,7 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
+    env_file:
+      - .env
     ports:
-      - 8889:8889
+      - "${PORT}:${PORT}"
